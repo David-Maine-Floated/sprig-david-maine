@@ -6,6 +6,11 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (contain real Sprig keys)
+.env
+.env.development
+.env.production
+
 # Editor/tooling
 .claude
 

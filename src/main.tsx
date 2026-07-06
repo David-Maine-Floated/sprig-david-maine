@@ -4,6 +4,12 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
 import { CartProvider } from './context/CartContext.tsx'
+import { sprig } from '@sprig-technologies/sprig-browser';
+
+//Sprig initialization line, 
+export const Sprig = sprig.configure({
+environmentId: import.meta.env.VITE_SPRIG_ENVIRONMENT_ID,
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
