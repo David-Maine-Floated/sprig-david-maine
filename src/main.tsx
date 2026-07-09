@@ -3,20 +3,18 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App.tsx'
-import { CartProvider } from './context/CartContext.tsx'
-import { sprig } from '@sprig-technologies/sprig-browser';
-
-//Sprig initialization line, 
-export const Sprig = sprig.configure({
-environmentId: import.meta.env.VITE_SPRIG_ENVIRONMENT_ID,
-})
+import { TaskProvider } from './context/TaskContext.tsx'
+import { UserProvider } from './context/UserContext.tsx'
+import './utils/sprig.ts'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <CartProvider>
-        <App />
-      </CartProvider>
+      <UserProvider>
+        <TaskProvider>
+          <App />
+        </TaskProvider>
+      </UserProvider>
     </BrowserRouter>
   </StrictMode>,
 )
