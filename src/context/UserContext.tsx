@@ -13,7 +13,7 @@ type UserContextValue = {
 }
 
 const UserContext = createContext<UserContextValue | undefined>(undefined)
-const STORAGE_KEY = 'terra-user'
+const STORAGE_KEY = 'flow-user'
 
 function generateCid(): string {
   return Math.random().toString(36).slice(2, 10)
